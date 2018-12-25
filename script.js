@@ -1,5 +1,37 @@
+var predefinedPets = [
+   {
+       key: "item-1",
+       name: "Том",
+       description: "Знайомтесь Том, 3-річний чудовий котик. Він грайливий, життєрадісний і дружелюбний до оточуючих. Він обожнює бути в центрі уваги і любить бути домашнім улюбленцем. Він також любить гратись та прогулянки на свіжому повітрі.."
+   },
+   {
+    
+    key: "item-2",
+    name: "Барсік",
+    description: "Барсіку 8 місяців. Він веселий та невгамовний малюк. Він дійсно гіперактивний, але зчасом він виросте з цього. Він любить увагу і їжу, він не агресивний взагалі і гарно ладнає з іншими тваринами."
+
+
+   },
+   {
+    key: "item-3",
+    name: "Рікі",
+    description: "Любить іграшки та людей! Вона є надзвичайною собакою, яка хоче порадувати, і ми не розуміємо, чому ще її не усиновили. Їй потрібно і хочеться бути частиною сім'ї! Якщо ви зацікавлені в Ельзі, будь ласка, зателефонуйте або відвідайте притулок..."
+   }
+
+
+
+
+
+];
+
+
+
+
+
 $(document).ready(
-    function () {        
+    function () {    
+        saveHelper.addPredefinedPets();
+
         saveHelper.loadDate(); // завантажуємо тваринок з localStorage
 
         saveHelper.addPet(); // додаємо обробник на клік
@@ -9,6 +41,14 @@ $(document).ready(
 var saveHelper = {
     counterKey: "counter",
     storageKey: "item-",
+    
+    addPredefinedPets: function () {
+        var counterValue = localStorage.getItem(this.counterKey);
+
+        if (counterValue){
+            for (var i = 0; i < predefinedPets.length; i++)
+        }
+    },
 
     loadDate: function () {
         var counter = Number(window.localStorage.getItem(this.counterKey));
